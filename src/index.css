@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animations personnalisées */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-delay {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-delay-2 {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in-delay 0.6s ease-out 0.2s both;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in-delay-2 0.6s ease-out 0.4s both;
+}
+
+/* Transitions fluides */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(23, 0, 114);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(18, 0, 90);
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgb(23, 0, 114);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgb(18, 0, 90);
+}
+
+/* Ensure proper dark mode functionality */
+.dark {
+  background-color: #1f2937 !important;
+  color: #f9fafb;
+}
+
+.dark * {
+  border-color: #4b5563;
+}
+
+/* Light mode improvements */
+html:not(.dark) {
+  background-color: #ffffff !important;
+  color: #111827;
+}
+
+/* Mode sombre pour le body */
+body.dark {
+  background-color: #1f2937 !important;
+  color: #f9fafb !important;
+}
+
+/* Mode clair pour le body */
+body:not(.dark) {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}
+
+/* Amélioration des cartes en mode sombre */
+.dark .bg-white {
+  background-color: #374151 !important;
+}
+
+.dark .bg-gray-50 {
+  background-color: #4b5563 !important;
+}
+
+.dark .text-gray-900 {
+  color: #f9fafb !important;
+}
+
+.dark .text-gray-600 {
+  color: #d1d5db !important;
+}
+
+/* Animations de slide */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.8s ease-out;
+}
+/* Amélioration de la lisibilité */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Contraste amélioré pour le mode sombre */
+.dark {
+  color-scheme: dark;
+}
+
+/* Animations de hover pour les cartes */
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Animations pour les boutons */
+.btn-primary {
+  background-color: rgb(23, 0, 114);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: rgb(18, 0, 90);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(23, 0, 114, 0.3);
+}
+
+/* Amélioration des focus states pour l'accessibilité */
+:focus {
+  outline: 2px solid rgb(23, 0, 114);
+  outline-offset: 2px;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  .responsive-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+/* Améliorations pour les animations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
